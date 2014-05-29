@@ -1,0 +1,23 @@
+# Mac
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xccheckout
+*.xcworkspace
+
+# CocoaPods
+Pods/
+
+# Version
+InfoPlist.h
+
+# nodejs
+node_modules
+
+*.ipa
+*.app.dSYM.zip
+
+# ruby
+.ruby-gemset
+.ruby-version

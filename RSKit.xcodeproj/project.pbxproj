@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CFC744BF1937172700535C97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC744BE1937172700535C97 /* Foundation.framework */; };
+		CFC744C11937172700535C97 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC744C01937172700535C97 /* CoreGraphics.framework */; };
+		CFC744C31937172700535C97 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC744C21937172700535C97 /* UIKit.framework */; };
+		CFC744C51937172700535C97 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC744C41937172700535C97 /* SpriteKit.framework */; };
+		CFC744CB1937172700535C97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFC744C91937172700535C97 /* InfoPlist.strings */; };
+		CFC744CD1937172700535C97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC744CC1937172700535C97 /* main.m */; };
+		CFC744D11937172700535C97 /* RSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC744D01937172700535C97 /* RSAppDelegate.m */; };
+		CFC744D71937172700535C97 /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC744D61937172700535C97 /* RSViewController.m */; };
+		CFC744DA1937172700535C97 /* RSMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC744D91937172700535C97 /* RSMyScene.m */; };
+		CFC744DE1937172700535C97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFC744DD1937172700535C97 /* Images.xcassets */; };
+		CFC744E51937172700535C97 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC744E41937172700535C97 /* XCTest.framework */; };
+		CFC744E61937172700535C97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC744BE1937172700535C97 /* Foundation.framework */; };
+		CFC744E71937172700535C97 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC744C21937172700535C97 /* UIKit.framework */; };
+		CFC744EF1937172700535C97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFC744ED1937172700535C97 /* InfoPlist.strings */; };
+		CFC744F11937172700535C97 /* RSKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC744F01937172700535C97 /* RSKitTests.m */; };
+		CFC744FF1937176700535C97 /* SKEmitterNode+RS.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC744FE1937176700535C97 /* SKEmitterNode+RS.m */; };
+		CFC745081937190C00535C97 /* SKColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC745071937190C00535C97 /* SKColor+Hex.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFC744E81937172700535C97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFC744B31937172700535C97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFC744BA1937172700535C97;
+			remoteInfo = RSKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CFC744BB1937172700535C97 /* RSKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFC744BE1937172700535C97 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CFC744C01937172700535C97 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CFC744C21937172700535C97 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CFC744C41937172700535C97 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		CFC744C81937172700535C97 /* RSKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RSKit-Info.plist"; sourceTree = "<group>"; };
+		CFC744CA1937172700535C97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CFC744CC1937172700535C97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CFC744CE1937172700535C97 /* RSKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSKit-Prefix.pch"; sourceTree = "<group>"; };
+		CFC744CF1937172700535C97 /* RSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAppDelegate.h; sourceTree = "<group>"; };
+		CFC744D01937172700535C97 /* RSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAppDelegate.m; sourceTree = "<group>"; };
+		CFC744D51937172700535C97 /* RSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSViewController.h; sourceTree = "<group>"; };
+		CFC744D61937172700535C97 /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
+		CFC744D81937172700535C97 /* RSMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSMyScene.h; sourceTree = "<group>"; };
+		CFC744D91937172700535C97 /* RSMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSMyScene.m; sourceTree = "<group>"; };
+		CFC744DD1937172700535C97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CFC744E31937172700535C97 /* RSKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFC744E41937172700535C97 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CFC744EC1937172700535C97 /* RSKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RSKitTests-Info.plist"; sourceTree = "<group>"; };
+		CFC744EE1937172700535C97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CFC744F01937172700535C97 /* RSKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSKitTests.m; sourceTree = "<group>"; };
+		CFC744FD1937176700535C97 /* SKEmitterNode+RS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+RS.h"; sourceTree = "<group>"; };
+		CFC744FE1937176700535C97 /* SKEmitterNode+RS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+RS.m"; sourceTree = "<group>"; };
+		CFC745061937190B00535C97 /* SKColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKColor+Hex.h"; sourceTree = "<group>"; };
+		CFC745071937190C00535C97 /* SKColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKColor+Hex.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFC744B81937172700535C97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFC744C11937172700535C97 /* CoreGraphics.framework in Frameworks */,
+				CFC744C31937172700535C97 /* UIKit.framework in Frameworks */,
+				CFC744C51937172700535C97 /* SpriteKit.framework in Frameworks */,
+				CFC744BF1937172700535C97 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFC744E01937172700535C97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFC744E51937172700535C97 /* XCTest.framework in Frameworks */,
+				CFC744E71937172700535C97 /* UIKit.framework in Frameworks */,
+				CFC744E61937172700535C97 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFC744B21937172700535C97 = {
+			isa = PBXGroup;
+			children = (
+				CFC744C61937172700535C97 /* RSKit */,
+				CFC744EA1937172700535C97 /* RSKitTests */,
+				CFC744BD1937172700535C97 /* Frameworks */,
+				CFC744BC1937172700535C97 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFC744BC1937172700535C97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFC744BB1937172700535C97 /* RSKit.app */,
+				CFC744E31937172700535C97 /* RSKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFC744BD1937172700535C97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFC744BE1937172700535C97 /* Foundation.framework */,
+				CFC744C01937172700535C97 /* CoreGraphics.framework */,
+				CFC744C21937172700535C97 /* UIKit.framework */,
+				CFC744C41937172700535C97 /* SpriteKit.framework */,
+				CFC744E41937172700535C97 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFC744C61937172700535C97 /* RSKit */ = {
+			isa = PBXGroup;
+			children = (
+				CFC744FD1937176700535C97 /* SKEmitterNode+RS.h */,
+				CFC744FE1937176700535C97 /* SKEmitterNode+RS.m */,
+				CFC745061937190B00535C97 /* SKColor+Hex.h */,
+				CFC745071937190C00535C97 /* SKColor+Hex.m */,
+				CFC744CF1937172700535C97 /* RSAppDelegate.h */,
+				CFC744D01937172700535C97 /* RSAppDelegate.m */,
+				CFC744D51937172700535C97 /* RSViewController.h */,
+				CFC744D61937172700535C97 /* RSViewController.m */,
+				CFC744D81937172700535C97 /* RSMyScene.h */,
+				CFC744D91937172700535C97 /* RSMyScene.m */,
+				CFC744DD1937172700535C97 /* Images.xcassets */,
+				CFC744C71937172700535C97 /* Supporting Files */,
+			);
+			path = RSKit;
+			sourceTree = "<group>";
+		};
+		CFC744C71937172700535C97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CFC744C81937172700535C97 /* RSKit-Info.plist */,
+				CFC744C91937172700535C97 /* InfoPlist.strings */,
+				CFC744CC1937172700535C97 /* main.m */,
+				CFC744CE1937172700535C97 /* RSKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFC744EA1937172700535C97 /* RSKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFC744F01937172700535C97 /* RSKitTests.m */,
+				CFC744EB1937172700535C97 /* Supporting Files */,
+			);
+			path = RSKitTests;
+			sourceTree = "<group>";
+		};
+		CFC744EB1937172700535C97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CFC744EC1937172700535C97 /* RSKitTests-Info.plist */,
+				CFC744ED1937172700535C97 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFC744BA1937172700535C97 /* RSKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFC744F41937172700535C97 /* Build configuration list for PBXNativeTarget "RSKit" */;
+			buildPhases = (
+				CFC744B71937172700535C97 /* Sources */,
+				CFC744B81937172700535C97 /* Frameworks */,
+				CFC744B91937172700535C97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RSKit;
+			productName = RSKit;
+			productReference = CFC744BB1937172700535C97 /* RSKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CFC744E21937172700535C97 /* RSKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFC744F71937172700535C97 /* Build configuration list for PBXNativeTarget "RSKitTests" */;
+			buildPhases = (
+				CFC744DF1937172700535C97 /* Sources */,
+				CFC744E01937172700535C97 /* Frameworks */,
+				CFC744E11937172700535C97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFC744E91937172700535C97 /* PBXTargetDependency */,
+			);
+			name = RSKitTests;
+			productName = RSKitTests;
+			productReference = CFC744E31937172700535C97 /* RSKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFC744B31937172700535C97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = rexsheng;
+				TargetAttributes = {
+					CFC744E21937172700535C97 = {
+						TestTargetID = CFC744BA1937172700535C97;
+					};
+				};
+			};
+			buildConfigurationList = CFC744B61937172700535C97 /* Build configuration list for PBXProject "RSKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFC744B21937172700535C97;
+			productRefGroup = CFC744BC1937172700535C97 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFC744BA1937172700535C97 /* RSKit */,
+				CFC744E21937172700535C97 /* RSKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFC744B91937172700535C97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFC744CB1937172700535C97 /* InfoPlist.strings in Resources */,
+				CFC744DE1937172700535C97 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFC744E11937172700535C97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFC744EF1937172700535C97 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFC744B71937172700535C97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFC744CD1937172700535C97 /* main.m in Sources */,
+				CFC745081937190C00535C97 /* SKColor+Hex.m in Sources */,
+				CFC744D11937172700535C97 /* RSAppDelegate.m in Sources */,
+				CFC744D71937172700535C97 /* RSViewController.m in Sources */,
+				CFC744DA1937172700535C97 /* RSMyScene.m in Sources */,
+				CFC744FF1937176700535C97 /* SKEmitterNode+RS.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFC744DF1937172700535C97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFC744F11937172700535C97 /* RSKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFC744E91937172700535C97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFC744BA1937172700535C97 /* RSKit */;
+			targetProxy = CFC744E81937172700535C97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CFC744C91937172700535C97 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFC744CA1937172700535C97 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CFC744ED1937172700535C97 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFC744EE1937172700535C97 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFC744F21937172700535C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CFC744F31937172700535C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFC744F51937172700535C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RSKit/RSKit-Prefix.pch";
+				INFOPLIST_FILE = "RSKit/RSKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CFC744F61937172700535C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RSKit/RSKit-Prefix.pch";
+				INFOPLIST_FILE = "RSKit/RSKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CFC744F81937172700535C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RSKit.app/RSKit";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RSKit/RSKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RSKitTests/RSKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CFC744F91937172700535C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RSKit.app/RSKit";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RSKit/RSKit-Prefix.pch";
+				INFOPLIST_FILE = "RSKitTests/RSKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFC744B61937172700535C97 /* Build configuration list for PBXProject "RSKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFC744F21937172700535C97 /* Debug */,
+				CFC744F31937172700535C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFC744F41937172700535C97 /* Build configuration list for PBXNativeTarget "RSKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFC744F51937172700535C97 /* Debug */,
+				CFC744F61937172700535C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CFC744F71937172700535C97 /* Build configuration list for PBXNativeTarget "RSKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFC744F81937172700535C97 /* Debug */,
+				CFC744F91937172700535C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFC744B31937172700535C97 /* Project object */;
+}
