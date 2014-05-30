@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "RSKit"
-  s.version      = "0.0.1"
-  s.summary      = "A short description of RSKit."
+  s.version      = "0.0.2"
+  s.summary      = "RSKit: helper classes for SpriteKit and so on."
   
   s.description  = <<-DESC
   It contains
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   
   s.subspec 'SpriteKit' do |ss|
-    ss.framework = "SpriteKit"
+    ss.frameworks = "SpriteKit"
     ss.source_files = 'RSKit/SK*.{h,m}'
   end
 
