@@ -1,12 +1,13 @@
 Pod::Spec.new do |s|
   s.name         = "RSKit"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "RSKit: helper classes for SpriteKit and so on."
   
   s.description  = <<-DESC
   It contains
   
-  * SpriteKit helper classes
+  * helper classes for SpriteKit
+  * helper classes for UIKit
                    DESC
   
   s.homepage     = "http://github.com/b051/RSKit"

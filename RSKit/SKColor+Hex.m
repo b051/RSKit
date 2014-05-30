@@ -8,7 +8,7 @@
 
 #define MAKEBYTE(_VALUE_) (int)(_VALUE_ * 0xFF) & 0xFF
 
-@implementation UIColor (Hex)
+@implementation SKColor (Hex)
 
 + (SKColor *)colorWithHexRGB:(NSUInteger)hex
 {
