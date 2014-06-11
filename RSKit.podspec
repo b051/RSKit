@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RSKit"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "RSKit: helper classes for SpriteKit and so on."
   
   s.description  = <<-DESC
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'SpriteKit' do |ss|
     ss.frameworks = "SpriteKit"
-    ss.source_files = 'RSKit/SK*.{h,m}'
+    ss.source_files = 'RSKit/SK*.{h,m}', 'RSKit/RS*Node.{h,m}'
   end
   
   s.subspec 'Foundation' do |ss|
