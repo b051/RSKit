@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RSKit"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "RSKit: helper classes for SpriteKit and so on."
   
   s.description  = <<-DESC
@@ -16,8 +16,12 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/b051/RSKit.git", :tag => s.version.to_s }
   
   s.requires_arc = true
+  s.ios.deployment_target = "7.0"
+  s.osx.deployment_target = "10.9"
   
   s.subspec 'SpriteKit' do |ss|
+    ss.ios.deployment_target = '7.0'
+    ss.osx.deployment_target = '10.9'
     ss.frameworks = "SpriteKit"
     ss.source_files = 'RSKit/SK*.{h,m}', 'RSKit/RS*Node.{h,m}'
   end
