@@ -8,19 +8,38 @@
 #import "RSTileNode.h"
 
 @implementation RSTileNode
+{
+  id<RSTileNode> _tile;
+}
 
 - (id)initWithTile:(id<RSTileNode>)tile
 {
   if (self = [super init]) {
+    _tile = tile;
     if ([tile respondsToSelector:@selector(texture)]) {
       SKTexture *texture = tile.texture;
       CGSize size = tile.tileSize;
+      CGPoint anchorPoint = self.anchorPoint;
+      CGFloat offsetX = texture.size.width * anchorPoint.x;
+      CGFloat offsetY = texture.size.height * anchorPoint.y;
       for (int i = 0; i < size.width; i++) {
         for (int j = 0; j < size.height; j++) {
           SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:texture size:texture.size];
-          sprite.anchorPoint = CGPointZero;
-          sprite.position = CGPointMake(i * texture.size.width, j * texture.size.height);
+          sprite.position = CGPointMake(i * texture.size.width + offsetX, j * texture.size.height + offsetY);
           [self addChild:sprite];
+        }
+      }
+    }
+    else if ([tile respondsToSelector:@selector(nextNode)]) {
+      CGSize size = tile.tileSize;
+      CGPoint anchorPoint = self.anchorPoint;
+      for (int i = 0; i < size.width; i++) {
+        for (int j = 0; j < size.height; j++) {
+          SKNode *node = [tile nextNode];
+          CGFloat offsetX = node.frame.size.width * anchorPoint.x;
+          CGFloat offsetY = node.frame.size.height * anchorPoint.y;
+          node.position = CGPointMake(i * node.frame.size.width + offsetX, j * node.frame.size.height + offsetY);
+          [self addChild:node];
         }
       }
     }
@@ -28,21 +47,36 @@
   return self;
 }
 
+- (CGPoint)anchorPoint
+{
+  if ([_tile respondsToSelector:@selector(anchorPoint)]) {
+    return [_tile anchorPoint];
+  }
+  return CGPointZero;
+}
+
 - (void)moveBackwardBy:(CGFloat)moveBy duration:(NSTimeInterval)duration completion:(dispatch_block_t)completion
 {
   SKAction *move = [SKAction moveByX:-moveBy y:0 duration:duration];
   __block CGFloat mostRight = 0;
-  [self.children enumerateObjectsUsingBlock:^(SKSpriteNode *stars, NSUInteger idx, BOOL *stop) {
-    [stars removeAllActions];
-    CGFloat maxX = stars.position.x + stars.size.width;
-    if (stars.position.y == 0) {
+  CGPoint anchorPoint = self.anchorPoint;
+
+  [self.children enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL *stop) {
+    [node removeAllActions];
+    CGFloat maxX = CGRectGetMaxX(node.frame);
+    if (node.position.y == 0) {
       mostRight = MAX(maxX, mostRight);
     }
-    [stars runAction:move completion:^{
+    [node runAction:move completion:^{
       if (maxX < moveBy) {
-        CGPoint p = stars.position;
-        p.x = mostRight - moveBy;
-        stars.position = p;
+        CGPoint p = node.position;
+        CGFloat offsetX = node.frame.size.width * anchorPoint.x;
+        p.x = mostRight - moveBy + offsetX;
+        NSLog(@"mostRight %f, moveBy %f => %f", mostRight, moveBy, p.x);
+        if ([_tile respondsToSelector:@selector(prepareForReuse:)]) {
+          [_tile prepareForReuse:node];
+        }
+        node.position = p;
       }
       if (idx == 0) {
         if (completion) completion();
