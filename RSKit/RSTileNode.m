@@ -69,7 +69,7 @@
   SKAction *move = [SKAction moveByX:-moveBy y:0 duration:duration];
   __block CGFloat mostRight = 0;
   CGPoint anchorPoint = self.anchorPoint;
-
+  __weak __typeof(self)weakSelf = self;
   [self.children enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL *stop) {
     [node removeAllActions];
     CGFloat maxX = CGRectGetMaxX(node.frame);
@@ -77,12 +77,15 @@
       mostRight = MAX(maxX, mostRight);
     }
     [node runAction:move completion:^{
+      __strong __typeof(weakSelf)strongSelf = weakSelf;
+      if (!strongSelf) return;
+
       if (maxX < moveBy) {
         CGPoint p = node.position;
         CGFloat offsetX = node.frame.size.width * anchorPoint.x;
         p.x = mostRight - moveBy + offsetX;
-        if ([_tile respondsToSelector:@selector(prepareForReuse:)]) {
-          [_tile prepareForReuse:node];
+        if ([strongSelf.tile respondsToSelector:@selector(prepareForReuse:)]) {
+          [strongSelf.tile prepareForReuse:node];
         }
         node.position = p;
       }
