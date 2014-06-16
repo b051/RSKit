@@ -6,11 +6,11 @@
 //
 
 #import "RSTileNode.h"
+@interface RSTileNode ()
+@property (nonatomic, strong) id<RSTileNode> tile;
+@end
 
 @implementation RSTileNode
-{
-  id<RSTileNode> _tile;
-}
 
 - (id)initWithTile:(id<RSTileNode>)tile
 {
@@ -47,6 +47,15 @@
   return self;
 }
 
+- (void)removeFromParent
+{
+  [self.children enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [obj removeAllActions];
+    [obj removeFromParent];
+  }];
+  [super removeFromParent];
+}
+
 - (CGPoint)anchorPoint
 {
   if ([_tile respondsToSelector:@selector(anchorPoint)]) {
@@ -72,7 +81,6 @@
         CGPoint p = node.position;
         CGFloat offsetX = node.frame.size.width * anchorPoint.x;
         p.x = mostRight - moveBy + offsetX;
-        NSLog(@"mostRight %f, moveBy %f => %f", mostRight, moveBy, p.x);
         if ([_tile respondsToSelector:@selector(prepareForReuse:)]) {
           [_tile prepareForReuse:node];
         }
