@@ -1,3 +1,10 @@
+//
+//  RSTileNode.h
+//
+//  Created by Rex Sheng on 6/11/14.
+//  Copyright (c) 2014 rexsheng. All rights reserved.
+//
+
 #import <SpriteKit/SpriteKit.h>
 
 @protocol RSTileNode <NSObject>
