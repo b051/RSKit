@@ -64,31 +64,30 @@
   return CGPointZero;
 }
 
+- (void)checkForReuse:(SKNode *)node
+{
+  CGFloat maxX = CGRectGetMaxX(node.frame);
+  if (maxX < 0) {
+    CGPoint p = node.position;
+    p.x += self.tile.tileSize.width * node.frame.size.width;
+    if ([self.tile respondsToSelector:@selector(prepareForReuse:)]) {
+      [self.tile prepareForReuse:node];
+    }
+    node.position = p;
+  }
+}
+
 - (void)moveBackwardBy:(CGFloat)moveBy duration:(NSTimeInterval)duration completion:(dispatch_block_t)completion
 {
   SKAction *move = [SKAction moveByX:-moveBy y:0 duration:duration];
-  __block CGFloat mostRight = 0;
-  CGPoint anchorPoint = self.anchorPoint;
-  __weak __typeof(self)weakSelf = self;
   [self.children enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL *stop) {
+    [self checkForReuse:node];
     [node removeAllActions];
-    CGFloat maxX = CGRectGetMaxX(node.frame);
-    if (node.position.y == 0) {
-      mostRight = MAX(maxX, mostRight);
-    }
+    
+    __weak __typeof(self)weakSelf = self;
     [node runAction:move completion:^{
       __strong __typeof(weakSelf)strongSelf = weakSelf;
-      if (!strongSelf) return;
-
-      if (maxX < moveBy) {
-        CGPoint p = node.position;
-        CGFloat offsetX = node.frame.size.width * anchorPoint.x;
-        p.x = mostRight - moveBy + offsetX;
-        if ([strongSelf.tile respondsToSelector:@selector(prepareForReuse:)]) {
-          [strongSelf.tile prepareForReuse:node];
-        }
-        node.position = p;
-      }
+      if (strongSelf) [strongSelf checkForReuse:node];
       if (idx == 0) {
         if (completion) completion();
       }
