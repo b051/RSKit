@@ -70,6 +70,7 @@
   if (maxX < 0) {
     CGPoint p = node.position;
     p.x += self.tile.tileSize.width * node.frame.size.width;
+    [node removeAllActions];
     if ([self.tile respondsToSelector:@selector(prepareForReuse:)]) {
       [self.tile prepareForReuse:node];
     }
@@ -109,13 +110,9 @@
 {
   SKAction *move = [SKAction moveByX:-moveBy y:0 duration:duration];
   [self.children enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL *stop) {
-    [self checkForReuse:node];
     [node removeAllActions];
-    
-    __weak __typeof(self)weakSelf = self;
+    [self checkForReuse:node];
     [node runAction:move completion:^{
-      __strong __typeof(weakSelf)strongSelf = weakSelf;
-      if (strongSelf) [strongSelf checkForReuse:node];
       if (idx == 0) {
         if (completion) completion();
       }
