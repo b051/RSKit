@@ -70,11 +70,10 @@
   if (maxX < 0) {
     CGPoint p = node.position;
     p.x += self.tile.tileSize.width * node.frame.size.width;
-    [node removeAllActions];
+    node.position = p;
     if ([self.tile respondsToSelector:@selector(prepareForReuse:)]) {
       [self.tile prepareForReuse:node];
     }
-    node.position = p;
   }
 }
 
