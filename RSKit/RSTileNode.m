@@ -77,8 +77,37 @@
   }
 }
 
+- (void)fixTileAsTimeGoesBy
+{
+  NSMutableDictionary *traits = [NSMutableDictionary dictionaryWithCapacity:self.children.count];
+  [self.children enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL *stop) {
+    id key = @(node.position.x);
+    NSMutableArray *nodes = traits[key];
+    if (!nodes) {
+      nodes = [NSMutableArray arrayWithCapacity:[self.tile tileSize].height];
+      traits[key] = nodes;
+    }
+    [nodes addObject:node];
+  }];
+  
+  NSArray *keys = [traits.allKeys sortedArrayUsingSelector:@selector(compare:)];
+  __block CGFloat x = [keys.firstObject floatValue];
+  [keys enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    NSArray *nodes = traits[obj];
+    [nodes enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL *stop) {
+      CGPoint p = node.position;
+      if (fabsf(p.x - x) > .25) {
+        p.x = x;
+        node.position = p;
+      }
+    }];
+    x += [nodes.firstObject frame].size.width;
+  }];
+}
+
 - (void)moveBackwardBy:(CGFloat)moveBy duration:(NSTimeInterval)duration completion:(dispatch_block_t)completion
 {
+  [self fixTileAsTimeGoesBy];
   SKAction *move = [SKAction moveByX:-moveBy y:0 duration:duration];
   [self.children enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL *stop) {
     [self checkForReuse:node];
