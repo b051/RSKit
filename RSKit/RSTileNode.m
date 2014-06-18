@@ -77,7 +77,7 @@
   }
 }
 
-- (void)fixTileAsTimeGoesBy
+- (void)fixPositions
 {
   NSMutableDictionary *traits = [NSMutableDictionary dictionaryWithCapacity:self.children.count];
   [self.children enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL *stop) {
@@ -107,7 +107,6 @@
 
 - (void)moveBackwardBy:(CGFloat)moveBy duration:(NSTimeInterval)duration completion:(dispatch_block_t)completion
 {
-  [self fixTileAsTimeGoesBy];
   SKAction *move = [SKAction moveByX:-moveBy y:0 duration:duration];
   [self.children enumerateObjectsUsingBlock:^(SKNode *node, NSUInteger idx, BOOL *stop) {
     [self checkForReuse:node];

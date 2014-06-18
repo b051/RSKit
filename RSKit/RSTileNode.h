@@ -18,6 +18,7 @@
 @end
 
 @interface RSTileNode : SKNode
+- (void)fixPositions;
 - (instancetype)initWithTile:(id<RSTileNode>)tile;
 - (void)moveBackwardBy:(CGFloat)moveBy duration:(NSTimeInterval)duration completion:(dispatch_block_t)completion;
 @end
