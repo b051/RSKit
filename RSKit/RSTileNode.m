@@ -119,12 +119,4 @@
   }];
 }
 
-- (void)removeAllActions
-{
-  [self.children enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    [obj removeAllActions];
-  }];
-  [super removeAllActions];
-}
-
 @end
