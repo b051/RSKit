@@ -1,5 +1,5 @@
 //
-//  SKNode+TPNodeClean.m
+//  SKNode+ChildrenClean.m
 //  Pods
 //
 //  Created by jason.huang on 7/15/14.
